@@ -1,0 +1,8 @@
+no branch criado localmente test:
+
+git pull origin test
+git config --global pull.ff only
+git pull origin test
+git pull --rebase=merges
+git branch --set-upstream-to origin/test
+
