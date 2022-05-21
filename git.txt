@@ -5,4 +5,5 @@ git config --global pull.ff only
 git pull origin test
 git pull --rebase=merges
 git branch --set-upstream-to origin/test
-
+git fetch origin test
+git rebase origin/test
