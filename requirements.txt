@@ -23,6 +23,7 @@ fastjsonschema
 Flask
 flit_core
 fonttools==4.25.0
+Gunicorn
 idna
 importlib-metadata
 importlib-resources
