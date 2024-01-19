@@ -57,7 +57,7 @@ nbformat
 nest-asyncio
 notebook
 numexpr
-numpy==1.22.4
+numpy
 packaging
 pandas==1.4.2
 pandocfilters
