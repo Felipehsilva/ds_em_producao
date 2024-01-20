@@ -16,6 +16,9 @@ TOKEN = '6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM';
 # send message
 #https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/sendMessage?chat_id=1369304880&text=Hi Felipe!
 
+#render
+#https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/setWebhook?url=https://ds-em-prod-fhs-telegram-bot.onrender.com/
+
 def send_message (chat_id, text):
 	url = 'https://api.telegram.org/bot{}/'.format(TOKEN)
 	url = url + 'sendMessage?chat_id={}'.format(chat_id)
@@ -95,8 +98,8 @@ def index():
 				d2 = d1[['store', 'prediction']].groupby( 'store' ).sum().reset_index()
 
 				msg = 'Store Number {} will sell R${:,.2f} in the next 6 weeks'.format( 
-						    d2.loc[i, 'store'], 
-						    d2.loc[i, 'prediction'] )
+						    d2.loc['store'].values[0], 
+						    d2.loc['prediction'] .values[0])
 				send_message(chat_id,msg)
 				return Response ('Ok', status=200)
 				
