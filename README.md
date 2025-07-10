@@ -1,5 +1,31 @@
 # Ds_em_Producao
+ds_em_producao
+This repository contains a Data Science project focused on store sales prediction, with a workflow that simulates a production environment. The main objective is to demonstrate the steps and considerations involved in building and deploying a Machine Learning model.
 
+## About the Project
+The ds_em_producao project addresses the challenge of predicting future store sales using historical data and store characteristics. It is structured into modules (represented by the notebooks mXX_vYY_store_sales_prediction.ipynb) that cover different phases of a data science project lifecycle, from initial exploration to preparation for production.
+
+## Features
+Exploratory Data Analysis (EDA): Deep understanding of sales, store, and holiday datasets.
+
+Feature Engineering: Creation of new variables from raw data to improve model performance.
+
+Data Preprocessing: Handling missing values, encoding categorical variables, and feature scaling.
+
+Model Building and Training: Development of Machine Learning models for sales prediction.
+
+Model Evaluation: Metrics to assess model performance.
+
+Production Workflow Simulation: Modular structure that can be adapted for production environments.
+
+## Repository Structure
+data/: Contains raw and processed datasets (e.g., train.csv, test.csv, store.csv).
+
+img/: Stores images and plots generated during the analysis.
+
+model/: Intended for storing trained models or model artifacts.
+
+mXX_vYY_store_sales_prediction.ipynb: Jupyter notebooks representing different modules or versions of the sales prediction project.
 
 
 # Files
