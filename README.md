@@ -35,23 +35,54 @@ test.csv - historical data excluding Sales
 sample_submission.csv - a sample submission file in the correct format
 store.csv - supplemental information about the stores
 
-# Data fields
+# Dataset Description
 
-Most of the fields are self-explanatory. The following are descriptions for those that aren't.
+The dataset contains various fields providing information about store sales, customer numbers, store status, and promotional activities. Most fields are self-explanatory, but here's a detailed description for those that might need more clarification:
 
-Id ------------------  				an Id that represents a (Store, Date) duple within the test set
-Store -------------------			a unique Id for each store
-Sales -------------------			the turnover for any given day (this is what you are predicting)
-Customers -------------------		the number of customers on a given day
-Open -------------------			an indicator for whether the store was open: 0 = closed, 1 = open
-StateHoliday -------------------	indicates a state holiday. Normally all stores, with few exceptions, are closed on state holidays. Note that all schools are closed on public holidays and weekends. a = public 										holiday, b = Easter holiday, c = Christmas, 0 = None
+Id: A unique identifier for a (Store, Date) pair within the test set.
 
-SchoolHoliday -------------------	indicates if the (Store, Date) was affected by the closure of public schools
-StoreType -------------------		differentiates between 4 different store models: a, b, c, d
-Assortment -------------------		describes an assortment level: a = basic, b = extra, c = extended
-CompetitionDistance --------------	distance in meters to the nearest competitor store
-CompetitionOpenSince[Month/Year] -  gives the approximate year and month of the time the nearest competitor was opened
-Promo -------------------			indicates whether a store is running a promo on that day
-Promo2 -------------------			Promo2 is a continuing and consecutive promotion for some stores: 0 = store is not participating, 1 = store is participating
-Promo2Since[Year/Week] ------		describes the year and calendar week when the store started participating in Promo2
-PromoInterval -------------------	describes the consecutive intervals Promo2 is started, naming the months the promotion is started anew. E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, 									November of any given year for that store
+Store: A unique ID assigned to each store.
+
+Sales: The total turnover for any given day. This is the target variable you are predicting.
+
+Customers: The total number of customers on a given day.
+
+Open: An indicator showing whether the store was open on a particular day. 0 means closed, and 1 means open.
+
+StateHoliday: Indicates a state holiday. Typically, most stores are closed on these days.
+
+a: Public holiday
+
+b: Easter holiday
+
+c: Christmas
+
+0: None (not a state holiday)
+
+SchoolHoliday: Indicates if the (Store, Date) combination was affected by public school closures.
+
+StoreType: Differentiates between four distinct store models: a, b, c, and d.
+
+Assortment: Describes the assortment level of the store.
+
+a: Basic
+
+b: Extra
+
+c: Extended
+
+CompetitionDistance: The distance in meters to the nearest competitor store.
+
+CompetitionOpenSince[Month/Year]: Provides the approximate year and month when the nearest competitor store opened.
+
+Promo: Indicates whether a store was running a promotion on that specific day.
+
+Promo2: Represents a continuing and consecutive promotion for some stores.
+
+0: The store is not participating in Promo2.
+
+1: The store is participating in Promo2.
+
+Promo2Since[Year/Week]: Describes the year and calendar week when the store began participating in Promo2.
+
+PromoInterval: Describes the consecutive intervals when Promo2 starts, naming the months the promotion is renewed. For example, "Feb,May,Aug,Nov" means each round of Promo2 starts in February, May, August, and November of any given year for that particular store.
