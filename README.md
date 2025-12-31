@@ -1,88 +1,193 @@
-# Ds_em_Producao
-ds_em_producao
-This repository contains a Data Science project focused on store sales prediction, with a workflow that simulates a production environment. The main objective is to demonstrate the steps and considerations involved in building and deploying a Machine Learning model.
+# 📊 Rossmann Store Sales Forecasting
 
-## About the Project
-The ds_em_producao project addresses the challenge of predicting future store sales using historical data and store characteristics. It is structured into modules (represented by the notebooks mXX_vYY_store_sales_prediction.ipynb) that cover different phases of a data science project lifecycle, from initial exploration to preparation for production.
+## 📌 Project Overview
 
-## Features
-Exploratory Data Analysis (EDA): Deep understanding of sales, store, and holiday datasets.
+This project focuses on solving a **retail sales forecasting problem** using historical data from Rossmann, one of the largest drugstore chains in Europe. The goal is to predict **daily sales for individual stores** over a future time horizon, supporting better operational and strategic decisions.
 
-Feature Engineering: Creation of new variables from raw data to improve model performance.
+In addition to the predictive model, this project includes the development of a **Telegram Bot** that allows users to request sales forecasts by simply providing a **store number**, making the solution accessible and practical for real-world usage.
 
-Data Preprocessing: Handling missing values, encoding categorical variables, and feature scaling.
+---
 
-Model Building and Training: Development of Machine Learning models for sales prediction.
+## 🎯 Business Problem
 
-Model Evaluation: Metrics to assess model performance.
+Retail managers need accurate sales forecasts to anticipate demand variations caused by:
 
-Production Workflow Simulation: Modular structure that can be adapted for production environments.
+- Seasonality and time-based patterns  
+- Promotional campaigns  
+- Holidays (state and school)  
+- Store characteristics and assortment  
+- Competitive environment  
 
-## Repository Structure
-data/: Contains raw and processed datasets (e.g., train.csv, test.csv, store.csv).
+Without reliable predictions, retailers may face stockouts, overstocking, inefficient staffing, and revenue loss.
 
-img/: Stores images and plots generated during the analysis.
+**Objective:**  
+Forecast daily sales for each store for the next **6 weeks (42 days)** and deliver these predictions through an automated and user-friendly interface.
 
-model/: Intended for storing trained models or model artifacts.
+---
 
-mXX_vYY_store_sales_prediction.ipynb: Jupyter notebooks representing different modules or versions of the sales prediction project.
+## 📂 Dataset
+
+The dataset is provided by Kaggle as part of the **Rossmann Store Sales** competition.
+
+It contains historical daily sales data along with store-level and external features, including:
+
+- `Store` – Unique store identifier  
+- `Date` – Sales date  
+- `Sales` – Daily sales (target variable)  
+- `Customers` – Number of customers  
+- `Open` – Store open/closed indicator  
+- `Promo`, `Promo2` – Promotion indicators  
+- `StateHoliday`, `SchoolHoliday` – Holiday information  
+- `StoreType`, `Assortment` – Store characteristics  
+- `CompetitionDistance` – Distance to nearest competitor  
+
+---
+
+## 🧠 Approach & Methodology
+
+This project follows a structured **end-to-end Data Science pipeline**:
+
+1. **Exploratory Data Analysis (EDA)**  
+   - Sales trends and seasonality  
+   - Impact of promotions and holidays  
+   - Store-level behavior analysis  
+
+2. **Data Preprocessing**  
+   - Handling missing values  
+   - Encoding categorical variables  
+   - Time-based feature extraction  
+
+3. **Feature Engineering**  
+   - Day, week, month, and year features  
+   - Promotion duration and frequency  
+   - Competition-related features  
+
+4. **Modeling**  
+   - Regression and machine learning models  
+   - Focus on predictive performance and generalization  
+
+5. **Evaluation**  
+   - Metrics such as RMSE and MAE  
+   - Model comparison and validation  
+
+---
+
+## 🏗️ Solution Architecture
+
+The solution is designed following a **modular and scalable architecture**, simulating a real production environment.
+
+### Architecture Components:
+
+1. **Data Layer**
+   - Historical sales and store metadata from Kaggle
+   - Preprocessed and transformed into model-ready features
+
+2. **Machine Learning Model**
+   - Trained regression-based model for sales forecasting
+   - Responsible for predicting daily sales for each store
+   - Serialized and versioned for reproducibility
+
+3. **Prediction Service (API Layer)**
+   - A lightweight service responsible for:
+     - Loading the trained model
+     - Receiving store number requests
+     - Running inference and aggregating forecasts
+   - Acts as an interface between the model and external consumers
+
+4. **Telegram Bot (User Interface)**
+   - Allows users to request predictions via Telegram commands
+   - Receives a **store number** as input
+   - Sends the forecasted sales for the next **6 weeks**
+   - Designed for simplicity and fast interaction
+
+### High-Level Flow:
+
+User (Telegram)
+↓
+Telegram Bot
+↓
+Prediction Service (API)
+↓
+Machine Learning Model
+↓
+Sales Forecast (6 weeks)
+↓
+Telegram Bot Response
 
 
-# Files
+This architecture demonstrates how a machine learning solution can be **operationalized and consumed through a messaging platform**, bridging the gap between data science and business applications.
 
-train.csv - historical data including Sales
-test.csv - historical data excluding Sales
-sample_submission.csv - a sample submission file in the correct format
-store.csv - supplemental information about the stores
+---
 
-# Dataset Description
+## 🤖 Telegram Bot for Sales Forecasting
 
-The dataset contains various fields providing information about store sales, customer numbers, store status, and promotional activities. Most fields are self-explanatory, but here's a detailed description for those that might need more clarification:
+To make the solution more practical and closer to a real production environment, a **Telegram Bot** is implemented.
 
-Id: A unique identifier for a (Store, Date) pair within the test set.
+### Bot Features:
+- Users can request sales forecasts by providing a **store number**
+- The bot returns the predicted sales for the next **6 weeks**
+- Simple and intuitive interface for non-technical users
+- Model inference integrated with the trained machine learning pipeline
 
-Store: A unique ID assigned to each store.
+### Example Interaction:
+User: /predict 25
+Bot: Sales forecast for Store 25 (next 6 weeks):
+Week 1: €XX,XXX
+Week 2: €XX,XXX
+...
 
-Sales: The total turnover for any given day. This is the target variable you are predicting.
+---
 
-Customers: The total number of customers on a given day.
+## 📈 Results & Insights
 
-Open: An indicator showing whether the store was open on a particular day. 0 means closed, and 1 means open.
+The final model is able to capture:
 
-StateHoliday: Indicates a state holiday. Typically, most stores are closed on these days.
+- Strong seasonal patterns in sales  
+- The impact of promotions on revenue  
+- Differences in performance across store types  
 
-a: Public holiday
+The Telegram Bot enables fast access to these insights, making forecasts actionable and easy to consume.
 
-b: Easter holiday
+---
 
-c: Christmas
+## 🛠️ Tools & Technologies
 
-0: None (not a state holiday)
+- Python  
+- Pandas, NumPy  
+- Matplotlib, Seaborn  
+- Scikit-learn  
+- Jupyter Notebook  
+- Telegram Bot API  
 
-SchoolHoliday: Indicates if the (Store, Date) combination was affected by public school closures.
+---
 
-StoreType: Differentiates between four distinct store models: a, b, c, and d.
+## 🚀 Business Impact
 
-Assortment: Describes the assortment level of the store.
+This solution allows retailers to:
 
-a: Basic
+- Quickly access sales forecasts per store  
+- Optimize inventory and logistics planning  
+- Improve workforce allocation  
+- Support strategic and operational decisions  
 
-b: Extra
+The project highlights the application of **Machine Learning, Time Series Forecasting, and Model Deployment** in a real retail scenario.
 
-c: Extended
+---
 
-CompetitionDistance: The distance in meters to the nearest competitor store.
+## 📌 Future Improvements
 
-CompetitionOpenSince[Month/Year]: Provides the approximate year and month when the nearest competitor store opened.
+- Use advanced time series models (Prophet, LSTM)  
+- Improve promotion-related feature engineering  
+- Deploy the prediction service as a REST API  
+- Add authentication, logging, and monitoring  
+- Automate retraining pipelines (MLOps)  
 
-Promo: Indicates whether a store was running a promotion on that specific day.
+---
 
-Promo2: Represents a continuing and consecutive promotion for some stores.
+## 👤 Author
 
-0: The store is not participating in Promo2.
+**Felipe Henrique**  
+Data Science | Machine Learning | Predictive Analytics  
 
-1: The store is participating in Promo2.
+Feel free to explore more projects on my GitHub profile.
 
-Promo2Since[Year/Week]: Describes the year and calendar week when the store began participating in Promo2.
-
-PromoInterval: Describes the consecutive intervals when Promo2 starts, naming the months the promotion is renewed. For example, "Feb,May,Aug,Nov" means each round of Promo2 starts in February, May, August, and November of any given year for that particular store.
