@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 # ignore .CSV
 *.csv
+#Ignore files
+comandos terminal uteis.txt
