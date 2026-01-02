@@ -42,7 +42,7 @@ munkres==1.1.4
 nbclient
 nest-asyncio
 numexpr
-numpy
+numpy==2.4.0
 packaging
 pandas==1.4.2
 pandocfilters
