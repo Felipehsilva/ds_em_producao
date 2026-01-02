@@ -1,1 +1,1 @@
-web: gunicorn rossman-bot:app
+web: gunicorn rossman_bot:app
