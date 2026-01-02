@@ -14,7 +14,7 @@ TOKEN = '8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE';
 #https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/getUpdates
 
 # send message
-#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/sendMessage?chat_id=1369304880&text=Hi Felipe!
+#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/sendMessage?chat_id=7467522128&text=Hi Felipe!
 
 #render
 #https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/setWebhook?url=https://ds-em-prod-fhs-telegram-bot.onrender.com/
