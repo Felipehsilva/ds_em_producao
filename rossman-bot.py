@@ -5,19 +5,19 @@ import pandas as pd
 from flask import Flask,request,Response
 
 #constants
-TOKEN = '6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM';
+TOKEN = '8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE';
 
 #Info about BOT
-#https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/getMe
+#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/getMe
 
 # get updates
-#https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/getUpdates
+#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/getUpdates
 
 # send message
-#https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/sendMessage?chat_id=1369304880&text=Hi Felipe!
+#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/sendMessage?chat_id=1369304880&text=Hi Felipe!
 
 #render
-#https://api.telegram.org/bot6495265207:AAHPRf0OhyPIxQxVEVSeLHIUrUv0msBMXSM/setWebhook?url=https://ds-em-prod-fhs-telegram-bot.onrender.com/
+#https://api.telegram.org/bot8586769630:AAEv975zTFEoquWS_QbH-z9aFcCRUduusFE/setWebhook?url=https://ds-em-prod-fhs-telegram-bot.onrender.com/
 
 def send_message (chat_id, text):
 	url = 'https://api.telegram.org/bot{}/'.format(TOKEN)
