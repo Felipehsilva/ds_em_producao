@@ -1,4 +1,6 @@
 # 📊 Rossmann Store Sales Forecasting
+👉 **Full project explanation available on my blog:**  
+🔗 [Click here](https://dataineverywhere.ct.ws/projects/sales-forecasting-for-rossmann-stores-using-machine-learning/)
 
 ## 📌 Project Overview
 
@@ -145,7 +147,7 @@ The Telegram Bot allows non-technical users to request sales forecasts.
 - Integrated with the trained ML model  
 
 ### Example
-/predict 25
+/25
 ---
 
 ## 🛠️ Tools & Technologies
