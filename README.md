@@ -200,7 +200,7 @@ It demonstrates how a data science solution can be operationalized and delivered
 
 ### 💬 Example Interaction
 
-User: /predict 25
+User: /25
 Bot: Sales forecast for Store 25 (next 6 weeks):
 Week 1: €XX,XXX
 Week 2: €XX,XXX
