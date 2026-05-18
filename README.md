@@ -1,6 +1,6 @@
 # 📊 Rossmann Store Sales Forecasting
 👉 **Full project explanation available on my blog:**  
-🔗 [Click here](https://dataineverywhere.ct.ws/projects/sales-forecasting-for-rossmann-stores-using-machine-learning/)
+🔗 [Click here](https://dataineverywhere.my-board.org/projects/sales-forecasting-for-rossmann-stores-using-machine-learning/)
 
 ## 📌 Project Overview
 
